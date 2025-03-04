@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yagnik Raval</title>
+    <title>Yagnik's Blog</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <div class="splash-screen">
-        <img src="icon-512x512.png" alt="App Logo">
-        <h1>Yagnik Raval</h1>
+    
+    <!-- 🔹 Navigation Bar -->
+    <nav>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul id="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#" onclick="openAbout()">About</a></li>
+            <li><a href="https://yagnik.eu.org" target="_blank">Visit Blog</a></li>
+        </ul>
+    </nav>
+
+    <!-- 🔹 About Section (Hidden by Default) -->
+    <div id="about-section">
+        <h2>About This App</h2>
+        <p>This is a PWA version of Yagnik's Blog.</p>
+        <p>Developed to provide a seamless reading experience.</p>
+        <button onclick="closeAbout()">Close</button>
     </div>
 
-    <script>
-        setTimeout(() => {
-            window.location.href = "https://yagnik-raval.blogspot.com";
-        }, 2000);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
