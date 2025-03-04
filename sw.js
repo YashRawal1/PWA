@@ -1,6 +1,6 @@
 const CACHE_NAME = 'blog-cache-v1';
 const urlsToCache = [
-  'https://yagnik-raval.blogspot.com/',
+  '/',
   '/index.html',
   '/icon-192x192.png',
   '/icon-512x512.png'
