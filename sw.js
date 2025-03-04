@@ -1,21 +1,19 @@
-const CACHE_NAME = 'blog-cache-v1';
-const urlsToCache = [
-  '/',
-  '/index.html',
-  '/icon-192x192.png',
-  '/icon-512x512.png'
-];
-
 self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
-  );
+    event.waitUntil(
+        caches.open('pwa-cache').then(cache => {
+            return cache.addAll([
+                '/index.html',
+                '/styles.css',
+                '/icon-512x512.png'
+            ]);
+        })
+    );
 });
 
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => response || fetch(event.request))
-  );
+    event.respondWith(
+        caches.match(event.request).then(response => {
+            return response || fetch(event.request);
+        })
+    );
 });
